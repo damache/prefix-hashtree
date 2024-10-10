@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: memcached-0
+  namespace: typeahead-svc
+  labels:
+    app: typeahead
+spec:
+  type: NodePort
+  externalTrafficPolicy: Local
+  selector:
+    statefulset.kubernetes.io/pod-name: memcached-0
+  ports:
+  - name: memcache
+    port: 11211
+    targetPort: memcache
+    nodePort: 30000
+  selector:
+    app: typeahead
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: memcached-1
+  namespace: typeahead-svc
+  labels:
+    app: typeahead
+spec:
+  type: NodePort
+  externalTrafficPolicy: Local
+  selector:
+    statefulset.kubernetes.io/pod-name: memcached-1
+  ports:
+  - name: memcache
+    port: 11211
+    targetPort: memcache
+    nodePort: 30001
+  selector:
+    app: typeahead
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: memcached-2
+  namespace: typeahead-svc
+  labels:
+    app: typeahead
+spec:
+  type: NodePort
+  externalTrafficPolicy: Local
+  selector:
+    statefulset.kubernetes.io/pod-name: memcached-2
+  ports:
+  - name: memcache
+    port: 11211
+    targetPort: memcache
+    nodePort: 30002
+  selector:
+    app: typeahead

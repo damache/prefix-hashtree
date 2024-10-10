@@ -1,0 +1,28 @@
+{
+  "name": "prefix_hash_tree",
+  "version": "1.0.0",
+  "description": "job that creates a prefix hash tree",
+  "main": "index.js",
+  "bin": {
+    "pht": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/cognitive-tooling-pocs/prefix_hash_tree"
+  },
+  "author": "Dama Reffett",
+  "license": "ISC",
+  "engine": {
+    "node": "14"
+  },
+  "dependencies": {
+    "bluebird": "~3.7.2",
+    "commander": "~8.3.0",
+    "csv-parse": "~5.0.3",
+    "google-closure-library": "~20211107.0.0",
+    "memcached": "~2.2.2"
+  }
+}
